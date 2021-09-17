@@ -1,0 +1,85 @@
+using System;
+namespace Samplecode
+{
+	interface AreaNPerimeter
+  	{
+    	double AreaOfShape();
+    	double PerimeterOfShape();
+	}
+  
+	class Circle : AreaNPerimeter 
+	{
+  		double radius;
+		public Circle()
+		{
+			radius = 6;
+		}
+    	public double AreaOfShape()
+    	{
+			return 3.14 * radius * radius;
+		}    
+    	public double PerimeterOfShape()
+    	{
+			return 2 * 3.14 * radius;
+		}
+  	}  
+  
+	class Triangle : AreaNPerimeter 
+	{
+    	double side, height;
+		public Triangle()
+		{
+			side = 5;
+			height = 10;
+		}
+    	public double AreaOfShape()
+    	{
+			return 0.5 * side * height;
+		}    
+    	public double PerimeterOfShape()
+    	{
+			return 3 * side;
+		}
+	}
+	
+	class Square : AreaNPerimeter 
+	{
+    	double side;
+		public Square()
+		{
+			side = 5;
+		}
+    	public double AreaOfShape()
+    	{
+			return side * side;
+		}    
+    	public double PerimeterOfShape()
+    	{
+			return 4 * side;
+		}
+	}  
+
+	public class Program
+	{
+		public static void Main()
+		{
+			Console.WriteLine("Area and perimeter of different shapes-");
+			Console.WriteLine();
+			
+			AreaNPerimeter circle = new Circle();
+			Console.WriteLine("Area of Circle-" + circle.AreaOfShape());
+			Console.WriteLine("Perimeter of Circle-" + circle.PerimeterOfShape());
+			Console.WriteLine();
+			
+			AreaNPerimeter triangle = new Triangle();
+			Console.WriteLine("Area of Triangle-" + triangle.AreaOfShape());
+			Console.WriteLine("Perimeter of Triangle-" + triangle.PerimeterOfShape());
+			Console.WriteLine();
+			
+			AreaNPerimeter square = new Square();
+			Console.WriteLine("Area of Square-" + square.AreaOfShape());
+			Console.WriteLine("Perimeter of Square-" + square.PerimeterOfShape());
+			Console.WriteLine();
+		}
+	}
+}
